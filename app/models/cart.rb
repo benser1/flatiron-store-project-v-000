@@ -5,6 +5,5 @@ class Cart < ActiveRecord::Base
    belongs_to :order
    has_one :status, through: :order
 
-   def add_item(item)
-   end
+   
 end #ends class
