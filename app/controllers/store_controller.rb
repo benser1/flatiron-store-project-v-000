@@ -1,6 +1,6 @@
 class StoreController < ApplicationController
   def index
-    @items = Item.all
+    @items = Item.available_items
     @categories = Category.all
   end
 end

@@ -1,5 +1,10 @@
 class ItemsController < ApplicationController
-  # def show
-  #   @item = Item.available_items
-  # end
+  
+  def index
+
+  end
+
+  def show
+    @item = Item.find(params[:id])
+  end
 end
