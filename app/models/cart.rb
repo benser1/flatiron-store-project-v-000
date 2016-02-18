@@ -22,5 +22,4 @@ class Cart < ActiveRecord::Base
       end
       add_item
    end ## add item end
-
 end #ends class
