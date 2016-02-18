@@ -3,5 +3,10 @@
 <ul>
 <% @category.items.each do |item| %>
     <li><%= link_to item.title, item_path(item) %></li>
+    <li>$<%= item.price / 100 %> </li>
+      <%= form_for item do |f| %>
+        <%= f.hidden_field :id, value: item.id %>
+      <%= f.submit "Add to Cart" %>
+      <% end %>
 <% end %>
 </ul>
