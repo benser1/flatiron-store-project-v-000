@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :line_items, only: [:create]
   resources :orders, only: [:show]
 
+  # delete '/users/sign_out' => 'devise/sessions#destroy'  ### this could be almost right?
   post 'carts/:id/checkout', to: 'carts#checkout', as: 'checkout'
 
 end
