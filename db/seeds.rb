@@ -14,5 +14,5 @@ Item.all.each do |item|
   counter += 1
 end
 
-luke = User.create(email: 'test@test.com', password: 'password')
+luke = User.new(email: 'test@test.com', password: 'password')
 luke.save
