@@ -22,4 +22,12 @@ class CartsController < ApplicationController
     @cart = Cart.find(params[:id])
   end
 
+  # def reload
+  #   @cart = current_cart.size
+  #   if add_item
+  #     @cart += 1
+  #   end
+  #   @cart 
+  # end
+
 end
