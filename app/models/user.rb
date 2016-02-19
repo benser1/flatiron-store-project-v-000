@@ -1,8 +1,10 @@
 class User < ActiveRecord::Base
   has_many :carts
-  has_many :line_items, through: :carts
-  has_many :items, through: :line_items
-  has_many :orders
+  # has_many :line_items, through: :carts
+  # has_many :items, through: :line_items
+  # has_many :orders
+  
+  #belongs_to :current_cart, class_name: "Cart"
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -23,6 +25,9 @@ class User < ActiveRecord::Base
    # def find_cart
    #   !!current_cart ? current_cart : Cart.create(user_id: self.id)
    # end
+
+
+   
 
 
 end

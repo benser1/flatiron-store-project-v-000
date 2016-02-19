@@ -23,5 +23,13 @@ class Cart < ActiveRecord::Base
       add_item
    end ## add item end
 
+   def checkout #subtract quantity from inventory
+     line_items.each do |line_item|
+      line_item.item.inventory -= line_item.quantity 
+      line_item.item.save 
+      end 
+    self.line_items.clear
+   end
+
 
 end #ends class

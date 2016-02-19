@@ -4,7 +4,7 @@ describe 'Feature Test: Cart', :type => :feature do
 
     context "logged in" do
       before(:each) do
-        @user = User.first
+        @user = User.create(email: "test@test.com", password: "123456789")
         @user.current_cart = @user.carts.create
         @current_cart = @user.current_cart
         @first_item = Item.first
@@ -52,7 +52,7 @@ describe 'Feature Test: Cart', :type => :feature do
        click_button("Checkout")
 
        @user.reload
-       expect(@user.current_cart).to be_nil 
+       expect(@user.current_cart).to be_nil
      end
     end
   end
@@ -65,9 +65,6 @@ describe 'Feature Test: Cart', :type => :feature do
       end
 
       it "Doesn't show Cart link when there is no current cart" do
-        cart = @user.carts.create(status: "submitted")
-        first_item = Item.first
-        first_item.line_items.create(quantity: 1, cart: cart)
         @user.current_cart = nil
         visit store_path
         expect(page).to_not have_link("Cart")
