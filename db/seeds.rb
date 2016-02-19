@@ -14,5 +14,8 @@ Item.all.each do |item|
   counter += 1
 end
 
-luke = User.new(email: 'test@test.com', password: 'password')
-luke.save
+person = User.new
+person.email = "hello@hello.com"
+person.password = "password"
+person.save
+
