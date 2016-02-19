@@ -1,6 +1,7 @@
 <h1>Items in cart</h1>
-
+<ul>
 <% current_user.current_cart.items.each do |item| %>
-  <% item.title %>
+ <li> <% item.title %> </li>
 <% end %>
+</ul>
 
